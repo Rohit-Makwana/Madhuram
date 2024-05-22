@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-	<title>Maxshop - Home1</title>
+	<title>Madhurm - Home</title>
 
 	<!-- Standard Favicon -->
 	<link rel="icon" type="image/x-icon" href="{{ '/public/images/favicon.ico' }}" />
@@ -33,7 +33,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Arizonia|Crimson+Text:400,400i,600,600i,700,700i|Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 	
 	<link rel="stylesheet" type="text/css" href="{{ asset('../asset/css/settings.css') }}">
- 
 	<!-- RS5.0 Layers and Navigation Styles -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('../asset/css/layers.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('../asset/css/navigation.css') }}">
@@ -45,13 +44,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('../asset/css/plugins.css') }}">			
 	<link rel="stylesheet" type="text/css" href="{{ asset('../asset/css/navigation-menu.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('../asset/css/shortcode.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('../asset/css/style.css') }}">
-	
-	
-	<!--[if lt IE 9]>
-		<script src="js/html5/respond.min.js"></script>
-    <![endif]-->
-	
+	<link rel="stylesheet" type="text/css" href="{{ asset('../asset/css/style.css') }}">	
 </head>
 
 <body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
@@ -64,6 +57,26 @@
 				</div>
 			</div>
 		</div><!-- Loader /- -->
+		<div class="row">
+			<div class="col-12">
+				@if (Session::has('status'))
+					<div class="alert alert-success alert-block">
+						<strong>{{ Session::get('status') }}</strong>
+					</div>
+				@endif
+				@if (Session::has('error'))
+					<div class="alert alert-danger alert-block">
+						<strong>{{ Session::get('error') }}</strong>
+					</div>
+				@endif
+			</div>
+		</div>
+
+		<div class="row" style="background-color: red">
+			<a href="{{ URL::to('googleLogin') }}">
+				<img src="/images/ftr-latestpost-1.jpg" alt="dasdasdsa">
+			</a>
+		</div>
 
 		<!-- Header -->
 		<header class="header-section container-fluid no-padding">
@@ -1078,7 +1091,6 @@
 	
 	<!-- JQuery v1.12.4 -->
 	<script src="{{ asset('../asset/js/jquery.min.js') }}"></script>
-	{{-- <link rel="stylesheet" type="text/css" href="{{ asset('../asset/css/plugins.css') }}">			 --}}
 
 	<!-- Library - Js -->
 	<script src="{{ asset('../asset/libraries/lib.js') }}"></script>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+// for google login url
+Route::get('/googleLogin',[HomeController::class,'googleLogin']);
+Route::get('/auth/google/callback',[HomeController::class,'googleHandle']);
