@@ -71,7 +71,6 @@
 				@endif
 			</div>
 		</div>
-
 		<div class="row" style="background-color: red">
 			<a href="{{ URL::to('googleLogin') }}">
 				<img src="/images/ftr-latestpost-1.jpg" alt="dasdasdsa">

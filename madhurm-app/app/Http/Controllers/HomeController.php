@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Auth\Authenticatable;
 use App\Models\User;
 
 class HomeController extends Controller
@@ -26,6 +28,7 @@ class HomeController extends Controller
             }
             session()->put('id',$findUser?->id);
             session()->put('isType',$findUser);
+            
 
             return redirect('/')->with('status','login Success fully');
 
